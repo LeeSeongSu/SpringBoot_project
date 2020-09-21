@@ -18,6 +18,12 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/login")
+    public String login() { // 회원 추가
+
+        return "/login";
+    }
+
     @PostMapping("/user")
     public String signup(UserInfoDto infoDto) { // 회원 추가
         userService.save(infoDto);
